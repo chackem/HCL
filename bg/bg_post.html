@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Page Title</title>
+
+     <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic+Coding&display=swap" rel="stylesheet"> 
+
+     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+</head>
+
+<body>
+
+<style>
+     
+     body
+     {
+          background-color: #000;
+     }
+
+     .main_container
+     
+     {
+          width:900px;
+          height: auto;
+          background-color: #777;
+          margin-left: auto;
+          margin-right: auto;
+          padding:2px;
+          display: flex;
+     }
+     
+     .post-container
+     {
+          border: 2px solid black;
+          overflow: hidden;
+          width: 650px;
+          height:142px;
+          margin-bottom: 3px;
+          float:right;
+     }
+     
+     .identifier
+     {
+          width:20px;
+          height:100%;
+          float:left ;
+          background: rgb(0,0,0);
+          background: linear-gradient(0deg, rgba(0,0,0,1) 75%, rgb(4, 221, 8) 100%); 
+     }
+     
+     .identifier-1
+     {
+          width:20px;
+          height:100%;
+          float:left ;
+          background: rgb(0,0,0);
+          background: linear-gradient(0deg, rgba(0,0,0,1) 75%, rgb(255, 0, 0) 100%); 
+     }
+
+
+     .post-main-container
+     {
+          width:630px;
+          height:100%;
+          float:left;     
+     }
+     
+     .category-container
+     {
+          width:100%;
+          background-color: black;
+          height:26px;
+     }
+     
+     .category-text
+     {          
+          background-color: black;
+          height:26px;
+     }
+     
+     .category-icons
+     {
+          height:26px;
+          padding-left: 2px;
+          padding-right: 4px;
+          float:right;
+     }
+     
+     .category-icon-container
+     {
+          height:100%;
+          width:22px;
+          float:left;
+     }
+     
+     .category-icon-container img
+     {
+          width: 16px;
+          height: 16px;
+          padding: 5px;
+     }
+     
+     .category-icon
+     {
+          width:100%;
+          height:100%;
+     }
+     
+     .category-text-span
+     {
+          font-family:sans-serif;
+          size: 9pt;
+          color:white;
+          padding-left: 5px;
+          line-height: 26px;
+          height:100%;
+     }
+     
+     .post-content-container
+     {
+          height:100px;
+     }
+     
+     .post-metadata
+     {
+          width:630px;
+          height:18px;
+          float:left;
+          background-color: black;
+     }
+     
+     .post-metadata-text-span
+     {
+          font-size: 8pt;
+          color:white;
+          font-family: sans-serif;
+          line-height: 18px;
+          height:18px;
+          float:right;
+          padding-right: 4px;
+          
+     }
+
+     .post-thumbnail-container
+     {
+          height:100px;
+          width:130px;
+          background-color: red;
+          float:left;
+     }
+     
+     .post-thumbnail
+     {
+          height:100%;
+          width:100%;
+          background-color: blue;
+     }
+
+
+     .post-text-container
+     {
+          height: 100px;
+          width:500px;
+          float:left;
+     }
+
+
+     .post-title-container
+     {
+          height: 25px;
+          width:100%;
+          background-color: #EEE;
+          border-bottom: 1px solid black;          
+     }
+
+     .post-title-span
+     {
+          height:100%;
+          width:100%;
+          padding-left: 3px;
+          line-height: 25px;
+          font-weight: 600;
+          font-family: sans-serif;
+          font-size: 16px;
+          margin-bottom: 5px;
+     }
+     
+     .post-short-description-container
+     {
+          padding-left: 15px;
+          padding-right: 15px;
+          padding-top: 5px;
+          text-align: justify;
+          font-size: 8pt;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          height: 75px;
+          background-color: white;
+     }
+     
+     .post-short-description
+     {
+          font-family: sans-serif;
+     }
+
+
+</style>
+
+<script>
+
+
+</script>
+
+     <div class="main_container">
+          <div style="float:right">     
+               
+               <button id="opener">Open Dialog</button>
+               
+               <div id = "dialog" class="post-container">
+                    <div class ="identifier"></div>
+                    <div class="post-main-container">
+                         <div class="category-container">
+                              <div class="category-icons">
+                                   <div class="category-icon-container">
+                                        <img src="file:///home/chackem/Desktop/article.svg">
+                                   </div>
+
+                                   <div class="category-icon-container">
+                                        <img src="file:///home/chackem/Desktop/tag.svg"> 
+                                   </div>
+                                   
+                                   
+                                   <div class="category-icon-container">
+                                        <img src="file:///home/chackem/Desktop/min.svg">
+                                   </div>
+
+                                   <div class="category-icon-container">
+                                        <img src="file:///home/chackem/Desktop/close.svg">
+                                   </div>
+
+                              </div>
+                              <div class="category-text">
+                                   <span class="category-text-span">DMing Like A Pro!</span>
+                                   
+                              </div>                  
+                         </div>
+                         <div class="post-content-container">
+                              <div class="post-thumbnail-container">
+                                   <img class="post-thumbnail" src="file:///home/chackem/Desktop/wtf.png">
+                              </div>
+                              <div class="post-text-container">
+                                   <div class="post-title-container">
+                                        <span class="post-title-span">WTF did I just read!</span>
+                                   </div>
+                                   <div class="post-short-description-container">
+                                        <span class="post-short-description">
+                                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eu consectetur velit. Sed congue tincidunt massa eu venenatis. Fusce rhoncus arcu iaculis malesuada tristique. Vestibulum semper rhoncus tortor et posuere. 
+                                        </span>
+                                   </div>
+                              </div>
+                         </div>
+                         <div class="post-metadata">
+                              <div class="post-metadata-text">
+                                   <span class="post-metadata-text-span"> 319 Comments • Capt. Hack'em • 3-27-2020</span>  
+                              </div>
+                              <div class="post-metadata-icons">
+                                   
+                              </div>
+                         </div>
+                    </div>
+               </div>
+
+               <div id = "dialog" class="post-container">
+                    <div class ="identifier"></div>
+                    <div class="post-main-container">
+                         <div class="category-container">
+                              <div class="category-icons">
+                                   <div class="category-icon-container">
+                                        <img src="file:///home/chackem/Desktop/article.svg">
+                                   </div>
+
+                                   <div class="category-icon-container">
+                                        <img src="file:///home/chackem/Desktop/tag.svg"> 
+                                   </div>
+                                   
+                                   
+                                   <div class="category-icon-container">
+                                        <img src="file:///home/chackem/Desktop/min.svg">
+                                   </div>
+
+                                   <div class="category-icon-container">
+                                        <img src="file:///home/chackem/Desktop/close.svg">
+                                   </div>
+
+                              </div>
+                              <div class="category-text">
+                                   <span class="category-text-span">DMing Like A Pro!</span>
+                                   
+                              </div>                  
+                         </div>
+                         <div class="post-content-container">
+                              <div class="post-thumbnail-container">
+                                   <img class="post-thumbnail" src="file:///home/chackem/Desktop/wtf.png">
+                              </div>
+                              <div class="post-text-container">
+                                   <div class="post-title-container">
+                                        <span class="post-title-span">WTF did I just read!</span>
+                                   </div>
+                                   <div class="post-short-description-container">
+                                        <span class="post-short-description">
+                                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eu consectetur velit. Sed congue tincidunt massa eu venenatis. Fusce rhoncus arcu iaculis malesuada tristique. Vestibulum semper rhoncus tortor et posuere. 
+                                        </span>
+                                   </div>
+                              </div>
+                         </div>
+                         <div class="post-metadata">
+                              <div class="post-metadata-text">
+                                   <span class="post-metadata-text-span"> 319 Comments • Capt. Hack'em • 3-27-2020</span>  
+                              </div>
+                              <div class="post-metadata-icons">
+                                   
+                              </div>
+                         </div>
+                    </div>
+               </div>
+               
+               <div id = "dialog" class="post-container">
+                    <div class ="identifier"></div>
+                    <div class="post-main-container">
+                         <div class="category-container">
+                              <div class="category-icons">
+                                   <div class="category-icon-container">
+                                        <img src="file:///home/chackem/Desktop/article.svg">
+                                   </div>
+
+                                   <div class="category-icon-container">
+                                        <img src="file:///home/chackem/Desktop/tag.svg"> 
+                                   </div>
+                                   
+                                   
+                                   <div class="category-icon-container">
+                                        <img src="file:///home/chackem/Desktop/min.svg">
+                                   </div>
+
+                                   <div class="category-icon-container">
+                                        <img src="file:///home/chackem/Desktop/close.svg">
+                                   </div>
+
+                              </div>
+                              <div class="category-text">
+                                   <span class="category-text-span">DMing Like A Pro!</span>
+                                   
+                              </div>                  
+                         </div>
+                         <div class="post-content-container">
+                              <div class="post-thumbnail-container">
+                                   <img class="post-thumbnail" src="file:///home/chackem/Desktop/wtf.png">
+                              </div>
+                              <div class="post-text-container">
+                                   <div class="post-title-container">
+                                        <span class="post-title-span">WTF did I just read!</span>
+                                   </div>
+                                   <div class="post-short-description-container">
+                                        <span class="post-short-description">
+                                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eu consectetur velit. Sed congue tincidunt massa eu venenatis. Fusce rhoncus arcu iaculis malesuada tristique. Vestibulum semper rhoncus tortor et posuere. 
+                                        </span>
+                                   </div>
+                              </div>
+                         </div>
+                         <div class="post-metadata">
+                              <div class="post-metadata-text">
+                                   <span class="post-metadata-text-span"> 319 Comments • Capt. Hack'em • 3-27-2020</span>  
+                              </div>
+                              <div class="post-metadata-icons">
+                                   
+                              </div>
+                         </div>
+                    </div>
+               </div>
+               
+               <div id = "dialog" class="post-container">
+                    <div class ="identifier"></div>
+                    <div class="post-main-container">
+                         <div class="category-container">
+                              <div class="category-icons">
+                                   <div class="category-icon-container">
+                                        <img src="file:///home/chackem/Desktop/article.svg">
+                                   </div>
+
+                                   <div class="category-icon-container">
+                                        <img src="file:///home/chackem/Desktop/tag.svg"> 
+                                   </div>
+                                   
+                                   
+                                   <div class="category-icon-container">
+                                        <img src="file:///home/chackem/Desktop/min.svg">
+                                   </div>
+
+                                   <div class="category-icon-container">
+                                        <img src="file:///home/chackem/Desktop/close.svg">
+                                   </div>
+
+                              </div>
+                              <div class="category-text">
+                                   <span class="category-text-span">DMing Like A Pro!</span>
+                                   
+                              </div>                  
+                         </div>
+                         <div class="post-content-container">
+                              <div class="post-thumbnail-container">
+                                   <img class="post-thumbnail" src="file:///home/chackem/Desktop/wtf.png">
+                              </div>
+                              <div class="post-text-container">
+                                   <div class="post-title-container">
+                                        <span class="post-title-span">WTF did I just read!</span>
+                                   </div>
+                                   <div class="post-short-description-container">
+                                        <span class="post-short-description">
+                                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eu consectetur velit. Sed congue tincidunt massa eu venenatis. Fusce rhoncus arcu iaculis malesuada tristique. Vestibulum semper rhoncus tortor et posuere. 
+                                        </span>
+                                   </div>
+                              </div>
+                         </div>
+                         <div class="post-metadata">
+                              <div class="post-metadata-text">
+                                   <span class="post-metadata-text-span"> 319 Comments • Capt. Hack'em • 3-27-2020</span>  
+                              </div>
+                              <div class="post-metadata-icons">
+                                   
+                              </div>
+                         </div>
+                    </div>
+               </div>
+               
+               <div id = "dialog" class="post-container">
+                    <div class ="identifier"></div>
+                    <div class="post-main-container">
+                         <div class="category-container">
+                              <div class="category-icons">
+                                   <div class="category-icon-container">
+                                        <img src="file:///home/chackem/Desktop/article.svg">
+                                   </div>
+
+                                   <div class="category-icon-container">
+                                        <img src="file:///home/chackem/Desktop/tag.svg"> 
+                                   </div>
+                                   
+                                   
+                                   <div class="category-icon-container">
+                                        <img src="file:///home/chackem/Desktop/min.svg">
+                                   </div>
+
+                                   <div class="category-icon-container">
+                                        <img src="file:///home/chackem/Desktop/close.svg">
+                                   </div>
+
+                              </div>
+                              <div class="category-text">
+                                   <span class="category-text-span">DMing Like A Pro!</span>
+                                   
+                              </div>                  
+                         </div>
+                         <div class="post-content-container">
+                              <div class="post-thumbnail-container">
+                                   <img class="post-thumbnail" src="file:///home/chackem/Desktop/wtf.png">
+                              </div>
+                              <div class="post-text-container">
+                                   <div class="post-title-container">
+                                        <span class="post-title-span">WTF did I just read!</span>
+                                   </div>
+                                   <div class="post-short-description-container">
+                                        <span class="post-short-description">
+                                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eu consectetur velit. Sed congue tincidunt massa eu venenatis. Fusce rhoncus arcu iaculis malesuada tristique. Vestibulum semper rhoncus tortor et posuere. 
+                                        </span>
+                                   </div>
+                              </div>
+                         </div>
+                         <div class="post-metadata">
+                              <div class="post-metadata-text">
+                                   <span class="post-metadata-text-span"> 319 Comments • Capt. Hack'em • 3-27-2020</span>  
+                              </div>
+                              <div class="post-metadata-icons">
+                                   
+                              </div>
+                         </div>
+                    </div>
+               </div>
+
+
+
+
+
+
+               <div id = "" class="">
+                    <div class ="identifier"></div>
+                    <div class="post-main-container">
+                         <div class="category-container">
+                              <div class="category-icons">
+                                   <div class="category-icon-container">
+                                        <img src="file:///home/chackem/Desktop/article.svg">
+                                   </div>
+
+                                   <div class="category-icon-container">
+                                        <img src="file:///home/chackem/Desktop/tag.svg"> 
+                                   </div>
+                                   
+                                   
+                                   <div class="category-icon-container">
+                                        <img src="file:///home/chackem/Desktop/min.svg">
+                                   </div>
+
+                                   <div class="category-icon-container">
+                                        <img src="file:///home/chackem/Desktop/close.svg">
+                                   </div>
+
+                              </div>
+                              <div class="category-text">
+                                   <span class="category-text-span">DMing Like A Pro!</span>
+                                   
+                              </div>                  
+                         </div>
+                         <div class="post-content-container">
+                              <div class="post-thumbnail-container">
+                                   <img class="post-thumbnail" src="file:///home/chackem/Desktop/wtf.png">
+                              </div>
+                              <div class="post-text-container">
+                                   <div class="post-title-container">
+                                        <span class="post-title-span">WTF did I just read!</span>
+                                   </div>
+                                   <div class="post-short-description-container">
+                                        <span class="post-short-description">
+                                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eu consectetur velit. Sed congue tincidunt massa eu venenatis. Fusce rhoncus arcu iaculis malesuada tristique. Vestibulum semper rhoncus tortor et posuere. 
+                                        </span>
+                                   </div>
+                              </div>
+                         </div>
+                         <div class="post-metadata">
+                              <div class="post-metadata-text">
+                                   <span class="post-metadata-text-span"> 319 Comments • Capt. Hack'em • 3-27-2020</span>  
+                              </div>
+                              <div class="post-metadata-icons">
+                                   
+                              </div>
+                         </div>
+                    </div>
+               </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+               
+          </div>     
+     </div>
+
+
+
+</body>
+</html>
+
